@@ -5,6 +5,7 @@ import Header from "./components/Header.";
 import Footer from "./components/Footer";
 import { createRef, Fragment, useState } from "react";
 import Producto from "./components/Producto";
+import Carrito from "./components/Carrito";
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -29,23 +30,25 @@ const App = () => {
 
   return (
     <Fragment>
-        <Header 
-          titulo = 'Tienda Virtual de Nico'
-        />
+      <Header 
+        titulo = 'Tienda Virtual de Nico' />
 
-    <h1>Listado de Productos</h1>
-    {products.map(product => (
-      <Producto 
-        key = {product.id} 
-        product = {product} 
-        car= {car}
-        setCar = {setCar}
-        products={products}/>
-    ))}
+      <h1>Listado de Productos</h1>
+      {products.map(product => (
+        <Producto 
+          key = {product.id} 
+          product = {product} 
+          car= {car}
+          setCar = {setCar}
+          products={products} />
+      ))}
+
+      <Carrito
+        car={car} />
+
+      <Footer 
+        fecha={fecha} />
         
-        <Footer 
-          fecha={fecha}
-        />
     </Fragment>
   );
 }
