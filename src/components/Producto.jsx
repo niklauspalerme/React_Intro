@@ -15,7 +15,10 @@ const Producto = ({product, car, setCar, products}) => {
 
     const seleccionarProducto = (id) =>{
        const productx = products.filter(product => product.id === id)
-       console.log(productx[0]);
+       setCar([
+           ...car,
+           productx[0]
+       ]);
     }
 
     return(
