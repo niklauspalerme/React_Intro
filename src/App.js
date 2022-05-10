@@ -3,7 +3,7 @@
 
 import Header from "./components/Header.";
 import Footer from "./components/Footer";
-import { Fragment, useState } from "react";
+import { createRef, Fragment, useState } from "react";
 import Producto from "./components/Producto";
 
 
@@ -13,6 +13,10 @@ import Producto from "./components/Producto";
 
 const App = () => {
 
+  const fecha = new Date().getFullYear();
+
+
+  //State de los productos
   const [products, setProducts] = useState([
     {id:1, name: "Angular JS T-shirt", price: 50},
     {id:2, name: "Vue JS T-shirt", price: 30},
@@ -20,7 +24,8 @@ const App = () => {
     {id:4, name: "Node JS T-shirt", price: 20}
   ]);
 
-  const fecha = new Date().getFullYear();
+  //State del carrito
+  const [car,setCar] = useState([]);
 
   return (
     <Fragment>
@@ -32,7 +37,10 @@ const App = () => {
     {products.map(product => (
       <Producto 
         key = {product.id} 
-        product = {product} />
+        product = {product} 
+        car= {car}
+        setCar = {setCar}
+        products={products}/>
     ))}
         
         <Footer 

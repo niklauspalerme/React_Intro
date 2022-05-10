@@ -9,12 +9,13 @@ import React from 'react';
 /// Componentes
 
 
-const Producto = ({product}) => {
+const Producto = ({product, car, setCar, products}) => {
 
     const {name,price,id} = product
 
     const seleccionarProducto = (id) =>{
-        console.log(`Comprando el producto con ID: ${id}`);
+       const productx = products.filter(product => product.id === id)
+       console.log(productx[0]);
     }
 
     return(
