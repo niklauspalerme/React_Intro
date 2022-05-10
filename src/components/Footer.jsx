@@ -9,9 +9,11 @@ import React from 'react'
 /// Componentes
 
 
-const Footer = () =>(
+const Footer = ({fecha}) =>(
     <footer>
-        Todos los derechos reservados &copy; 
+        <p>
+            Todos los derechos reservados &copy; {fecha}
+        </p>
     </footer>
 )
 

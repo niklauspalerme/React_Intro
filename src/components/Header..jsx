@@ -9,15 +9,12 @@ import React from 'react';
 /// Componentes
 
 
-const Header = () => {
+const Header = ({titulo}) => {
 
-    //1) Codigo Tradicional JS
+    let mensaje = "Header Component "
 
-    let mensaje = "Hola soy un componente :) "
-
-    //2) Lo que queremos retornar
     return(
-        <h1 id="encabezado" className='encabezado'>Header Component : {mensaje} </h1>
+        <h1 id="encabezado" className='encabezado'>{mensaje}: {titulo} </h1>
     )
 
 }
