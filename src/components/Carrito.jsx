@@ -10,7 +10,7 @@ import Producto from './Producto';
 /// Componentes
 
 
-const Carrito = ({car}) => {
+const Carrito = ({car,setCar}) => {
 
     return(
        <div className='carrito'>
@@ -19,8 +19,10 @@ const Carrito = ({car}) => {
             ? <p>There is not element in the Kart</p>
             : car.map( carProduct =>(
                     <Producto
-                    key={carProduct.id}
-                    product= {carProduct} />
+                        key={carProduct.id}
+                        product= {carProduct} 
+                        car={car}
+                        setCar={setCar}/>
                 ))}
        </div>
     )

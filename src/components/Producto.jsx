@@ -21,13 +21,25 @@ const Producto = ({product, car, setCar, products}) => {
        ]);
     }
 
+    const eliminarProducto = (id)=>{
+        const carProdutcx = car.filter (carProduct => carProduct.id  !== id);
+        setCar(carProdutcx);
+    }
+
     return(
        <div>
            <h2>Product: {name}</h2>
            <h3>Price: {price}</h3>
-           <button type='button' onClick={()=>seleccionarProducto(id)}>
-                Comprar
-           </button>
+          
+           {products
+           ? ( <button type='button' onClick={()=>seleccionarProducto(id)}>
+                Add
+               </button>
+            )
+           :( <button type='button' onClick={()=>eliminarProducto(id)}>
+               Delete
+              </button>
+           )}  
        </div>
     )
 

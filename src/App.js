@@ -44,11 +44,12 @@ const App = () => {
       ))}
 
       <Carrito
-        car={car} />
+        car={car}
+        setCar={setCar} />
 
       <Footer 
         fecha={fecha} />
-        
+
     </Fragment>
   );
 }
