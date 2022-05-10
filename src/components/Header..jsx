@@ -1,15 +1,30 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+/// Importaciones
+
+
 import React from 'react';
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+/// Componentes
 
 
 const Header = () => {
 
-    return(
-        <h1>Estamos en el Header Compoonent </h1>
-    )
+    //1) Codigo Tradicional JS
 
+    let mensaje = "Hola soy un componente :) "
+
+    //2) Lo que queremos retornar
+    return(
+        <h1 id="encabezado" className='encabezado'>Header Component : {mensaje} </h1>
+    )
 
 }
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+/// Exportamos
 
 export default Header;
 
